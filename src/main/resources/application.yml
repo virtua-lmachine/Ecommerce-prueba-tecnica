@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: mysql
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: "c2ltcGxlLWVjb21tZXJjZS13aXNobGlzdC1zZWNyZXQta2V5LWZvci1oczI1Ni0yMDI2"
+  expiration-ms: 86400000
