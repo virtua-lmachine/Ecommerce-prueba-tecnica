@@ -1,19 +1,19 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: root
-    password: mysql
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://uz57kpyuwmlsvuci:NVvMooV75aF03Xpx1r8s@brvgaxpwlsxeppdppjeo-mysql.services.clever-cloud.com:3306/brvgaxpwlsxeppdppjeo}
+    username: ${SPRING_DATASOURCE_USERNAME:uz57kpyuwmlsvuci}
+    password: ${SPRING_DATASOURCE_PASSWORD:NVvMooV75aF03Xpx1r8s}
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
     properties:
       hibernate:
-        format_sql: true
+        format_sql: ${SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL:true}
 
 jwt:
-  secret: "c2ltcGxlLWVjb21tZXJjZS13aXNobGlzdC1zZWNyZXQta2V5LWZvci1oczI1Ni0yMDI2"
-  expiration-ms: 86400000
+  secret: ${JWT_SECRET:c2ltcGxlLWVjb21tZXJjZS13aXNobGlzdC1zZWNyZXQta2V5LWZvci1oczI1Ni0yMDI2}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
