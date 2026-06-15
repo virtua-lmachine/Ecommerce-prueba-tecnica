@@ -7,6 +7,12 @@ spring:
     username: brvgaxpwlsxeppdppjeo
     password: NVvMooV75aF03Xpx1r8s
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 1
+      idle-timeout: 30000
+      max-lifetime: 600000
+      
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
