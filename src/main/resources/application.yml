@@ -1,19 +1,21 @@
 server:
-  port: ${PORT:8080}
+  port: 8080
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://uz57kpyuwmlsvuci:NVvMooV75aF03Xpx1r8s@brvgaxpwlsxeppdppjeo-mysql.services.clever-cloud.com:3306/brvgaxpwlsxeppdppjeo}
-    username: ${SPRING_DATASOURCE_USERNAME:uz57kpyuwmlsvuci}
-    password: ${SPRING_DATASOURCE_PASSWORD:NVvMooV75aF03Xpx1r8s}
+    url: jdbc:mysql://uz57kpyuwmlsvuci:NVvMooV75aF03Xpx1r8s@brvgaxpwlsxeppdppjeo-mysql.services.clever-cloud.com:3306/brvgaxpwlsxeppdppjeo
+    username: brvgaxpwlsxeppdppjeo
+    password: NVvMooV75aF03Xpx1r8s
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
-    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+      ddl-auto: update
+    show-sql: true
     properties:
       hibernate:
-        format_sql: ${SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL:true}
+        format_sql: true
 
 jwt:
-  secret: ${JWT_SECRET:c2ltcGxlLWVjb21tZXJjZS13aXNobGlzdC1zZWNyZXQta2V5LWZvci1oczI1Ni0yMDI2}
-  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  secret: c2ltcGxlLWVjb21tZXJjZS13aXNobGlzdC1zZWNyZXQta2V5LWZvci1oczI1Ni0yMDI2
+  expiration-ms: 86400000
